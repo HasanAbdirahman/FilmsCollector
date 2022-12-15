@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Films List</h1>
+
+{% for film in films %}
+  <a href="{% url 'detail' cat.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ film.name }}</span>
+            <p>Year_released: {{ film.year_released }}</p>
+            <p>Description: {{ film.description }}</p>
+            
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
