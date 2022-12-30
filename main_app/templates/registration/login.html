@@ -1,0 +1,10 @@
+{%extends 'base.html'%} {%block content%}
+
+<h1>Log in</h1>
+<form action="{%url 'login'%}" method="POST" autocomplete="off">
+  {%csrf_token%} {{form.as_p}}
+  <input type="submit" class="btn" value="Login" />
+  <!-- next helps the user what he wanted to b4 we told him to go and log in -> very cool -->
+  <input type="hidden" name="next" value="{{next}}" />
+</form>
+{%endblock%}
